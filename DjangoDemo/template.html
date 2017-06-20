@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>
+        Dear {{ person_name }}:
+            Thanks for placing an order form {{ company }}.It's scheduled to ship on {{ ship_date|date,"F j,Y" }}.
+        {% if passed %}
+            The result is :You passed!
+
+        {% else %}
+            I'm sorry.
+        {% endif %}
+
+    </p>
+</body>
+</html>
