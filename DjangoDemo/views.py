@@ -1,23 +1,23 @@
 # coding:utf-8
 
 from django.http import HttpResponse
-from django.template import Template, Context
+from django.template import Template, Context,RequestContext
 import datetime
+from django.shortcuts import render_to_response
 
 import time
 
 def hello(request):
     return HttpResponse("HELLO")
 
-def temp(requst):
+def temp(request):
     d = datetime.datetime.now()
     # 格式化
     # d.strftime("%Y%m%d %H:%M:%S")
-    t = Template("Hello:{{ name }}  {{ date.minute }}")
 
-    c = Context({"name": "John", "date": d})
-    result = t.render(c)
-    return HttpResponse(result)
+    return render_to_response("template.html",
+                              {"person_name":"QINMAN","company":"BAIDU","ship_date":d,"passed":True,"list":[1,2,3]},
+                              context_instance=RequestContext(request))
 
 
 

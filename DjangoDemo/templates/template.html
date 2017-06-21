@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
     <p>
-        Dear {{ person_name }}:
-            Thanks for placing an order form {{ company }}.It's scheduled to ship on {{ ship_date|date,"F j,Y" }}.
+        Dear {{ person_name }}:</br>
+        Thanks for placing an order form {{ company }}.It's scheduled to ship on {{ ship_date}}.</br>
         {% if passed %}
             The result is :You passed!
 
@@ -16,5 +16,10 @@
         {% endif %}
 
     </p>
+
+
+    {% for item in list %}
+        <li>{{ item }}</li>
+    {% endfor %}
 </body>
 </html>
