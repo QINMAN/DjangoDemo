@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.template import Template, Context,RequestContext
 import datetime
 from django.shortcuts import render_to_response
-
+import models
 import time
 
 def hello(request):
@@ -20,4 +20,8 @@ def temp(request):
                               context_instance=RequestContext(request))
 
 
+def studentList(request):
+    s_list_all = models.student.objects.all()
+    s_list_filter=models.student.objects.filter(age__in=[16,18])
 
+    return render_to_response("stu.html",{"s_list":s_list_all},context_instance = RequestContext(request))
