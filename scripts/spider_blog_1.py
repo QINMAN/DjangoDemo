@@ -5,7 +5,7 @@ import pyquery
 import MySQLdb
 from sqlConn import SqlConn
 
-def readCate():
+def read_cate():
     conn = MySQLdb.connect(host="113.10.195.169", port=3306, user='mm',
                            passwd='mm_123456', db='mm_test', charset='utf8')
     cursor = conn.cursor()
