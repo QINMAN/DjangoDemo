@@ -18,7 +18,7 @@ def read_cate():
     return data
 
 
-def saveCate(context):
+def save_cate(context):
 
     conn = MySQLdb.connect(host="113.10.195.169",port=3306,user='mm',
                            passwd='mm_123456',db='mm_test',charset='utf8')
@@ -31,7 +31,7 @@ def saveCate(context):
     conn.commit()
     cursor.close()
     conn.close()
-    print readCate()
+    print read_cate()
 
 
 def update(value, cid):
@@ -43,7 +43,7 @@ def update(value, cid):
     conn.commit()
     cursor.close()
     conn.close()
-    print readCate()
+    print read_cate()
 
 
 def delete(context):
@@ -55,7 +55,7 @@ def delete(context):
     conn.commit()
     cursor.close()
     conn.close()
-    print readCate()
+    print read_cate()
 
 
 url = 'http://www.yangqq.com/jstt/'
