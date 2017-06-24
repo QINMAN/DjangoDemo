@@ -2,14 +2,15 @@
 
 import MySQLdb
 from django.db import models
+import datetime
 
-class category(models.Model):
+class Category(models.Model):
     cid = models.AutoField(primary_key=True)
     catename = models.CharField(max_length=50)
     class Meta:
         db_table = 'category'
 
-class article(models.Model):
+class Article(models.Model):
     aid = models.AutoField(primary_key = True)
     title = models.CharField(max_length=50)
     context = models.TextField()
@@ -19,3 +20,9 @@ class article(models.Model):
     cid = models.PositiveIntegerField(default=0)
     class Meta:
         db_table = 'article'
+
+    def get_addtime_date(self):
+        return datetime.datetime.fromtimestamp(self.addtime).strftime("%Y%m%d")
+
+    def get_category(self):
+        return Category.objects.get(cid=self.cid)

@@ -1,11 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="zh-cn">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <title>{% block title %}曼曼的个人博客 - 一个站在web后端之路的女技术员个人博客网站{% endblock %}</title>
+    <meta name="keywords" content="{% block keywords %}个人博客,曼曼个人博客,个人博客模板,秦曼{% endblock %}"/>
+    <meta name="description" content="{% block description %}曼曼个人博客，是一个站在web后端之路的女程序员个人网站{% endblock %}"/>
+    <link href="/static/blog_files/base.css" rel="stylesheet">
+    <link href="/static/blog_files/index.css" rel="stylesheet">
+    <link href="/static/blog_files/new.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+<script src="modernizr.js"></script>
+<![endif]-->
+
 </head>
 <body>
 
-This is footer.
+<header>
+    <div id="logo"><a href="/"></a></div>
+    <nav class="topnav" id="topnav">
+        <a href="/"><span>首页</span><span class="en">Portal</span></a>
+
+    </nav>
+
+</header>
+<div class="banner">
+    <section class="box">
+        <ul class="texts">
+            <p>我们不停的翻弄着回忆</p>
+            <p>却再也找不回那时的自己</p>
+            <p>红尘一梦，不再追寻</p>
+        </ul>
+        <div class="avatar"><a href="about.html"><span>曼曼</span></a>
+        </div>
+    </section>
+</div>
+
+<article>
+    {% block content %}
+
+    {% endblock %}
+    <aside class="right">
+        <div class="rnav">
+            <h2>栏目导航</h2>
+            <ul>
+                {% for cate  in  category_list %}
+                <li><a href="/?cateid={{ cate.cid }}">{{ cate.catename }}</a></li>
+
+                {% endfor  %}
+            </ul>
+        </div>
+        <div class="news">
+            <h3>
+                <p>最新<span>文章</span></p>
+            </h3>
+            <ul class="rank">
+                {% for article in article_list %}
+
+                    <li><a href="/article/detail/{{ article.aid }}/" title="{{ article.title }}" target="_blank">{{ article.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+
+
+            <h3 class="links">
+                <p>友情<span>链接</span></p>
+            </h3>
+            <ul class="website">
+                <li><a href="http://www.w3school.com.cn/" target="_blank">w3c-school</a>&nbsp;&nbsp;<a
+                        href="http://fang.com/">搜房网</a></li>
+            </ul>
+
+            <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone"
+                                                                                              data-cmd="qzone"
+                                                                                              title="分享到QQ空间"></a><a
+                    href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq"
+                                                                                       data-cmd="tqq"
+                                                                                       title="分享到腾讯微博"></a><a href="#"
+                                                                                                              class="bds_renren"
+                                                                                                              data-cmd="renren"
+                                                                                                              title="分享到人人网"></a><a
+                    href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+            <script>window._bd_share_config = {
+                "common": {
+                    "bdSnsKey": {},
+                    "bdText": "",
+                    "bdMini": "2",
+                    "bdMiniList": false,
+                    "bdPic": "",
+                    "bdStyle": "1",
+                    "bdSize": "32"
+                }, "share": {}
+            };
+            with (document)0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+            <div class="guanzhu">扫描二维码关注<span>曼曼的博客</span>官方微信账号</div>
+            <a href="/"><img src="/static/blog_files/QQ20170622-135428.png"></a>
+</article>
+<footer>
+    <p>Design by Manman <a href="http://www.miitbeian.gov.cn/" target="_blank">ICP备china-001</a></p>
+</footer>
+
+
 </body>
 </html>

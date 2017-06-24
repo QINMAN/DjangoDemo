@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+        <h2 class="title_tj">
+        <p>文章<span>推荐</span></p>
+    </h2>
+    <div class="bloglist left">
+
+        {% for article in article_list %}
+        <h3><a href="/article/detail/{{ article.aid }}">{{ article.title }}</a></h3>
+
+        <ul style="width: 93%">
+            <p>{{ article.context|slice:"0:100" }}</p>
+            <a title="{{ article.title }}" href="/article/detail/{{ article.aid }}" target="_blank"
+               class="readmore">阅读全文>></a>
+        </ul>
+        <p class="dateview"><span>{{ article.get_addtime_date }}</span><span>作者：{{ article.author }} </span><span>个人博客：[<a href=/?cateid={{ article.cid }}/>{{ article.get_category.catename }}</a>]</span></p>
+
+        {% endfor %}
+
+    </div>
+{% endblock %}

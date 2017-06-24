@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="bloglist left">
+    <h2 class="c_titile">{{ article.title }}</h2>
+        <p class="box_c"><span class="d_time">发布时间：{{ article.get_addtime_date }}</span><span>编辑：<a href="mailto:qm_199301@163.com">manman</a></span></p>
+    <ul class="infos" style="width: 94%">
+        <p>{{ article.context }}</p>
+
+        <p align="center" class="pageLink"></p>
+    </ul>
+</div>
+{% endblock %}
