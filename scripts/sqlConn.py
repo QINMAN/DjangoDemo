@@ -35,10 +35,9 @@ class SqlConn():
             # print col_names
             # values = 'test_context , test_title'
             # self.cursor.execute('insert into %s (%s) VALUES (%s)', (table,col_names, values))
-            print  'insert into %s (%s) VALUES (%s)'% (table,col_names,",".join(["%s"*len(params_value)]))
+            # print  'insert into %s (%s) VALUES (%s)'% (table,col_names,",".join(["%s"*len(params_value)]))
             self.cursor.execute('insert into %s (%s) VALUES (%s)'% (table,col_names,",".join(["%s"]*len(params_value))), params_value)
             # self.cursor.execute("insert into xx(a,b) VALUES(%s,%s)",xxxxs)
-
             self.commit()
 
     # delete data
@@ -97,10 +96,10 @@ class SqlConn():
 conn=SqlConn()
 # conn.delete_data("category",{"cid":35})
 
-result= conn.select_data("article")
-for i in result:
-    cid=random.sample([36,37,39,40],1)[0]
-    print i[0],cid
-    conn.update_data("article",{"cid":cid},{"aid":int(i[0])})
+# result= conn.select_data("article")
+# for i in result:
+#     cid=random.sample([36,37,39,40],1)[0]
+#     print i[0],cid
+#     conn.update_data("article",{"cid":cid},{"aid":int(i[0])})
 #self.cursor.execute('delete from category WHERE cid=%s', (35,)
 #   delete from category  where  cid=%s
