@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
                        url(r"^",include("DjangoDemo.blog.urls")),
 
-                       (r"^$",views.temp),
+                       (r"^hello$",views.hello),
+                       (r"^temp$",views.temp),
                        (r"^student$",views.studentList)
 )

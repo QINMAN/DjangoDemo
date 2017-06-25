@@ -1,5 +1,6 @@
 # Django settings for DjangoDemo project.
 
+from  django.conf import  global_settings
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -99,6 +100,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'DjangoDemo.custom_middleware.TestMideleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
