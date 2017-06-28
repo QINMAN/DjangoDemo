@@ -31,6 +31,7 @@ def write_data(title,content):
     conn.close()
 
 db_handle = sqlConn.SqlConn()
+
 db_handle.delete_data(table='article', params_dic={})
 for url in href_list:
     try:

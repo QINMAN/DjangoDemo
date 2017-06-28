@@ -4,7 +4,7 @@ import MySQLdb
 import random
 
 class SqlConn():
-
+    version = 1.0
     def __init__(self):
         self.conn = MySQLdb.connect(host="113.10.195.169",port=3306,user='mm',
                            passwd='mm_123456',db='mm_test',charset='utf8')
@@ -77,6 +77,7 @@ class SqlConn():
 
         self.commit()
 
+
     def select_data(self,table,where_dic={}):
         cursor=self.conn.cursor()
         if len(where_dic)>0:
@@ -91,7 +92,14 @@ class SqlConn():
         cursor.close()
         return result
 
+    @staticmethod
+    def testStataicMe():
+        pass
 
+    @classmethod
+    def testClaaa(cls):
+
+        pass
 
 conn=SqlConn()
 # conn.delete_data("category",{"cid":35})
