@@ -1,0 +1,13 @@
+<uwsgi>
+    <socket>0.0.0.0:8123</socket>
+    <master>true</master>
+    <protocol>http</protocol>
+    <harakiri>10</harakiri>
+    <chdir>./</chdir>
+    <module>django_wsgi</module>
+    <processes>2</processes> <!-- 进程数 -->
+    <pidfile>/home/nginx/logs/uwsgi_djangodemo.pid</pidfile>
+    <disable-logging>false</disable-logging>
+    <buffer-size>32768</buffer-size>
+    <daemonize>/home/nginx/logs/uwsgi_djangodemo.log</daemonize>
+</uwsgi>
