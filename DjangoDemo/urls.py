@@ -3,7 +3,7 @@ import views
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
-
+from django.contrib.staticfiles import  urls
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'DjangoDemo.views.home', name='home'),
@@ -20,3 +20,4 @@ urlpatterns = patterns('',
                        (r"^temp$",views.temp),
                        (r"^student$",views.studentList)
 )
+urlpatterns+=urls.staticfiles_urlpatterns()
