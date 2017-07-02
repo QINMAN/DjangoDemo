@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>{% block title %}曼曼的个人博客 - 一个站在web后端之路的女技术员个人博客网站{% endblock %}</title>
-    <meta name="keywords" content="{% block keywords %}个人博客,曼曼个人博客,个人博客模板,秦曼{% endblock %}"/>
+    <meta name="keywords" content="{% block keywords %}{% include "keyword.html" %}{% endblock %}"/>
     <meta name="description" content="{% block description %}曼曼个人博客，是一个站在web后端之路的女程序员个人网站{% endblock %}"/>
     <link href="/static/blog_files/base.css" rel="stylesheet">
     <link href="/static/blog_files/index.css" rel="stylesheet">

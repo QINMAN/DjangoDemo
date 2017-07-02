@@ -20,6 +20,7 @@ def foo(a):
 
 #foo=deca(foo)
 c=foo('abc')
+d=foo("ab")
 print  c
 
 # class  Test(object):
