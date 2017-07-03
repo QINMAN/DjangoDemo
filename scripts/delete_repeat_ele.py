@@ -17,3 +17,6 @@ _list = [1,2,3,3,4,4]
 # print new_list
 # print new
 print list(set(_list))
+print set(_list)
+
+

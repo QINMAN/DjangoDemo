@@ -15,3 +15,4 @@ print conn.hget("test123","test")
 conn.lpush("test22","zhou1")
 conn.rpush("test22","abc")
 print conn.lrange("test22",0,-1)
+

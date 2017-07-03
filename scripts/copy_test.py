@@ -4,8 +4,8 @@ import copy
 a = [1, 2, 3, 4, ['a', 'b']]  #原始对象
 
 b = a  #赋值，传对象的引用
-#c = copy.copy(a)  #对象拷贝，浅拷贝
-c=[a[0],a[1],a[2],a[3],a[4]]
+c = copy.copy(a)  #对象拷贝，浅拷贝
+# c=[a[0],a[1],a[2],a[3],a[4]]
 d = copy.deepcopy(a)  #对象拷贝，深拷贝
 
 a.append(5)  #修改对象a
